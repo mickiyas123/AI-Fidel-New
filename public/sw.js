@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Fidel_V2';
+const CACHE_NAME = 'Fidel_V3';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(self.skipWaiting());
