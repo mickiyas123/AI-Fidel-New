@@ -41,8 +41,8 @@ function App() {
   const isSafari = userAgent.includes('Safari');
 
   const isMobile = /Android|iPhone/i.test(navigator.userAgent);
-  if (isMobile) return <UsePC message="mobile devices" />;
-  if (isSafari) return <UsePC message="safari browsers" />
+  // if (isMobile) return <UsePC message="mobile devices" />;
+  // if (isSafari) return <UsePC message="safari browsers" />
 
   if (loading)
     return (
