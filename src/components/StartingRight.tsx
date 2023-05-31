@@ -85,7 +85,7 @@ function StartingRight({ header1, header2, btns, firstPage }) {
             {header1}
           </h1>
           <h1 className="text-white text-2xl cxs:text-3xl md:text-4xl font-bold text-center">
-            {header2}
+            {language === 'am' && /select-game/i.test(pathname) ? "" : header2}
           </h1>
         </div>
         <div className="flex flex-col items-center justify-center b text-sm md:text-md">
