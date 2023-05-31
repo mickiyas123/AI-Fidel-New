@@ -32,17 +32,17 @@ import { useAtom } from 'jotai';
 import { loadingAtom } from './store/store';
 import loadingGif from '@assets/images/loading.gif';
 import HandContextProvider from './context/HandContext';
-// import UsePC from './pages/UsePC';
+import UsePC from './pages/UsePc';
 
 function App() {
   const [loading] = useAtom(loadingAtom);
 
-  // const userAgent = navigator.userAgent;
-  // const isSafari = userAgent.includes('Safari');
+  const userAgent = navigator.userAgent;
+  const isSafari = userAgent.includes('Safari');
 
-  // const isMobile = /Android|iPhone/i.test(navigator.userAgent);
-  // if (isMobile) return <UsePC message="mobile devices" />;
-  // if (isSafari) return <UsePC message="safari browsers" />
+  const isMobile = /Android|iPhone/i.test(navigator.userAgent);
+  if (isMobile) return <UsePC message="mobile devices" />;
+  if (isSafari) return <UsePC message="safari browsers" />
 
   if (loading)
     return (
