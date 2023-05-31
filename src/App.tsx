@@ -32,7 +32,7 @@ import { useAtom } from 'jotai';
 import { loadingAtom } from './store/store';
 import loadingGif from '@assets/images/loading.gif';
 import HandContextProvider from './context/HandContext';
-import UsePC from './pages/UsePC';
+// import UsePC from './pages/UsePC';
 
 function App() {
   const [loading] = useAtom(loadingAtom);
