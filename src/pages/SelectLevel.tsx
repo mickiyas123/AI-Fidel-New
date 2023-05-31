@@ -15,6 +15,10 @@ import { useAtom } from 'jotai';
 import { BsArrowLeftShort } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 const socialMediaIcons = [AiOutlineInstagram, GrFacebookOption, ImTwitter];
+import { FacebookShareButton, TwitterShareButton, InstapaperShareButton } from 'react-share';
+import { RxInstagramLogo } from 'react-icons/rx';
+import { RiFacebookFill } from 'react-icons/ri';
+import { SiTwitter } from 'react-icons/si';
 
 function SelectLevel() {
   const user = useContext(AuthContext);
@@ -95,9 +99,32 @@ function SelectLevel() {
           </h2>
         </div>
         <div className="hidden md:flex mr-0 items-end w-12 self-stretch flex-col justify-between">
-          {socialMediaIcons.map((Icon, i) => {
-            return <Icon key={i} size={20} color="white" />;
-          })}
+          <div className=" cursor-pointer">
+            <TwitterShareButton
+              url={'https://www.fidel.com'}
+              title={`Fidel`}
+              via={`click the link to play fidel`}
+            >
+              <SiTwitter size={20} />
+            </TwitterShareButton>
+          </div>
+          <div className="cursor-pointer">
+            <FacebookShareButton
+              url={'https://www/.fidel.com'}
+              quote={`click the link to play fidel`}
+            >
+              <RiFacebookFill size={20} />
+            </FacebookShareButton>
+          </div>
+          <div className=" cursor-pointer">
+            <InstapaperShareButton
+              url={'https://www.fidel.com'}
+              title={`Fidel`}
+              description={`click the link to play fidel`}
+            >
+              <RxInstagramLogo size={20} />
+            </InstapaperShareButton>
+          </div>
         </div>
       </div>
       <div className="flex flex-col mt-12 md:mt-0 gap-5 w-10/12 md:w-full mr-auto ml-auto">
@@ -111,7 +138,7 @@ function buildLevelButtons(searchParams: URLSearchParams, search: string, levelO
   let level = searchParams.get('level');
   const lang = searchParams.get('lang');
   const mode = searchParams.get('mode');
-  const hand = searchParams.get('hand')
+  const hand = searchParams.get('hand');
   const levels = [1, 2, 3, 4];
 
   if (mode == 'game') {
@@ -151,13 +178,25 @@ function buildLevelButtons(searchParams: URLSearchParams, search: string, levelO
         {levels.map((i) => {
           return (
             <Link
-              to={lang === 'ar' && i != 1 ? `/select-level?mode=${mode}&lang=${lang}&hand=${hand}` : `/welcome${search}&level=${i}`}
+              to={
+                lang === 'ar' && i != 1
+                  ? `/select-level?mode=${mode}&lang=${lang}&hand=${hand}`
+                  : `/welcome${search}&level=${i}`
+              }
               key={i}
-              className={`btn btn-accent rounded-md flex justify-start md:justify-center px-5 mr-4 md:mr-0 ${lang === 'ar' && i != 1 && 'opacity-25 cursor-not-allowed'}`}
-              onClick={e => e.preventDefault}
+              className={`btn btn-accent rounded-md flex justify-start md:justify-center px-5 mr-4 md:mr-0 ${
+                lang === 'ar' && i != 1 && 'opacity-25 cursor-not-allowed'
+              }`}
+              onClick={(e) => e.preventDefault}
             >
               <p className=" capitalize">
-                {lang === 'ar' && i != 1 ? "Coming soon" : <>{t('l')} {i}</> }
+                {lang === 'ar' && i != 1 ? (
+                  'Coming soon'
+                ) : (
+                  <>
+                    {t('l')} {i}
+                  </>
+                )}
               </p>
             </Link>
           );

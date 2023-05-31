@@ -17,6 +17,11 @@ import { useTranslation } from 'react-i18next';
 import { use } from 'i18next';
 import coin from '@assets/icons/coin.svg';
 import grayCoin from '@assets/icons/grayCoin.svg';
+import { FacebookShareButton, TwitterShareButton, InstapaperShareButton } from 'react-share';
+import { RxInstagramLogo } from 'react-icons/rx';
+import { RiFacebookFill } from 'react-icons/ri';
+import { SiTwitter } from 'react-icons/si';
+
 const useGetSearchParams = (searchParams: URLSearchParams) => {
   const mode = searchParams.get('mode');
   const hand = searchParams.get('hand');
@@ -128,9 +133,32 @@ function LevelCompleted() {
     <div className="flex h-screen md:h-auto justify-center relative md:mt-0">
       <div className="md:w-2/3 h-[80vh] md:h-auto mt-[9vh] md:mt-0 md:pt-0 w-11/12 flex flex-col justify-center gap-4 items-center">
         <div className="absolute right-0 hidden md:flex flex-col gap-14">
-          {socialMediaIcons.map((Icon) => {
-            return <Icon size={20} />;
-          })}
+        <div className=" cursor-pointer">
+            <TwitterShareButton
+              url={'https://www.fidel.com'}
+              title={`Fidel`}
+              via={`click the link to play fidel`}
+            >
+              <SiTwitter size={20} />
+            </TwitterShareButton>
+          </div>
+          <div className="cursor-pointer">
+            <FacebookShareButton
+              url={'https://www/.fidel.com'}
+              quote={`click the link to play fidel`}
+            >
+              <RiFacebookFill size={20} />
+            </FacebookShareButton>
+          </div>
+          <div className=" cursor-pointer">
+            <InstapaperShareButton
+              url={'https://www.fidel.com'}
+              title={`Fidel`}
+              description={`click the link to play fidel`}
+            >
+              <RxInstagramLogo size={20} />
+            </InstapaperShareButton>
+          </div>
         </div>
         <Link
           to={
