@@ -536,7 +536,7 @@ export class ArabicAlphabet {
       11.28787165178614,
     ];
 
-    this.specialCharacterArray = { ب, ح, خ, د, ذ, ر, ز, ش, ض, ظ, غ, ف, ق, ن};
+    this.specialCharacterArray = { ب, ح, خ, د, ر, ز, ش, ض, ظ, غ, ن};
 
     this.alphabetArray = [ث, ا, ع, م, ل, ك, ج, ص, ت, ي];
   }
