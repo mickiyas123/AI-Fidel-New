@@ -33,10 +33,12 @@ import { loadingAtom } from './store/store';
 import loadingGif from '@assets/images/loading.gif';
 import HandContextProvider from './context/HandContext';
 import UsePC from './pages/UsePC';
+import {  isSafari, isMobile } from "react-device-detect";
 
 function App() {
   const [loading] = useAtom(loadingAtom);
-  if (/Android/i.test(navigator.userAgent)) return <UsePC />
+  if (isMobile) return <UsePC message="mobile devices" />;
+  if (isSafari) return <UsePC message="safari browsers" />;
   if (loading)
     return (
       <div className=" fixed top-0 right-0 left-0 bottom-0">
