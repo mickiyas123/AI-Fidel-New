@@ -32,13 +32,16 @@ import { useAtom } from 'jotai';
 import { loadingAtom } from './store/store';
 import loadingGif from '@assets/images/loading.gif';
 import HandContextProvider from './context/HandContext';
-import UsePC from './pages/UsePC';
+import UsePC from './pages/UsePc';
 import {  isSafari, isMobile } from "react-device-detect";
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   const [loading] = useAtom(loadingAtom);
+
   if (isMobile) return <UsePC message="mobile devices" />;
   if (isSafari) return <UsePC message="safari browsers" />;
+
   if (loading)
     return (
       <div className=" fixed top-0 right-0 left-0 bottom-0">
@@ -59,6 +62,7 @@ function App() {
                 <Route path="select-profile" element={<SelectProfile />} />
                 {/* <Route path="login" element={<Login />} />  */}
                 <Route path="select-game" element={<SelectGame />} />
+                {/* <Route path="use-pc" element={<UsePC message="safari browser" />} /> */}
                 <Route path="coming-soon" element={<ComingSoon />} />
                 <Route path="complete" element={<Complete />} />
                 <Route path="final-score-board" element={<FinalScoreBoard />} />
@@ -81,7 +85,8 @@ function App() {
                   <Route path="result" element={<Result />} />
                   <Route path="change-language" element={<ChangeLanguage />} />
                 </Route>
-                <Route path="*" element={<p>path not found</p>} />
+                {/* <Route path="*" element={<p>path not found</p>} /> */}
+                <Route path="*" element={<PageNotFound />} />
               </Route>
             </Routes>
           </BrowserRouter>
