@@ -339,7 +339,7 @@ function Game() {
     })();
   }, [isGameStarted]);
   useEffect(() => {
-    const twoMinutesInMilliseconds = 120000; // 2 minutes in milliseconds
+    const twoMinutesInMilliseconds = 60000; // 2 minutes in milliseconds
     const elapsedTime = currentTime - startTime;
 
     if (elapsedTime >= twoMinutesInMilliseconds) {
