@@ -10,6 +10,10 @@ import { useTranslation } from 'react-i18next';
 import { AuthContext } from '@/context/AuthContext';
 import { useContext, useEffect, useState } from 'react';
 const socialMediaIcons = [AiOutlineInstagram, GrFacebookOption, ImTwitter];
+import { FacebookShareButton, TwitterShareButton, InstapaperShareButton } from 'react-share';
+import { RxInstagramLogo } from 'react-icons/rx';
+import { RiFacebookFill } from 'react-icons/ri';
+import { SiTwitter } from 'react-icons/si';
 import { useNavigate } from 'react-router-dom';
 
 const Welcome = () => {
@@ -81,20 +85,33 @@ const Welcome = () => {
             <h1 className="m-1 font-semibold text-white">{t('lesson')}</h1>
           </div>
         </div>
-        <div className="flex flex-col justify-between">
-          {Array(1)
-            .fill(0)
-            .map((_, i) => (
-              <div key={i}></div>
-            ))}
-          {socialMediaIcons.map((Icon, i) => {
-            return <Icon key={i} size={25} color="white" />;
-          })}
-          {Array(1)
-            .fill(0)
-            .map((_, i) => (
-              <div key={i}></div>
-            ))}
+        <div className="flex flex-col  justify-center gap-8">
+          <div className=" cursor-pointer">
+            <TwitterShareButton
+              url={'https://www.fidel.com'}
+              title={`Fidel`}
+              via={`click the link to play fidel`}
+            >
+              <SiTwitter size={20} />
+            </TwitterShareButton>
+          </div>
+          <div className="cursor-pointer">
+            <FacebookShareButton
+              url={'https://www/.fidel.com'}
+              quote={`click the link to play fidel`}
+            >
+              <RiFacebookFill size={20} />
+            </FacebookShareButton>
+          </div>
+          <div className=" cursor-pointer">
+            <InstapaperShareButton
+              url={'https://www.fidel.com'}
+              title={`Fidel`}
+              description={`click the link to play fidel`}
+            >
+              <RxInstagramLogo size={20} />
+            </InstapaperShareButton>
+          </div>
         </div>
       </div>
       <Link
