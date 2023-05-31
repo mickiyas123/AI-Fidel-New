@@ -88,7 +88,7 @@ const Welcome = () => {
         <div className="flex flex-col  justify-center gap-8">
           <div className=" cursor-pointer">
             <TwitterShareButton
-              url={'https://www.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               title={`Fidel`}
               via={`click the link to play fidel`}
             >
@@ -97,7 +97,7 @@ const Welcome = () => {
           </div>
           <div className="cursor-pointer">
             <FacebookShareButton
-              url={'https://www/.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               quote={`click the link to play fidel`}
             >
               <RiFacebookFill size={20} />
@@ -105,7 +105,7 @@ const Welcome = () => {
           </div>
           <div className=" cursor-pointer">
             <InstapaperShareButton
-              url={'https://www.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               title={`Fidel`}
               description={`click the link to play fidel`}
             >

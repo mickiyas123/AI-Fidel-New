@@ -130,7 +130,7 @@ const ProfilePage = () => {
         <div className="flex flex-col gap-8">
           <div className=" cursor-pointer">
             <InstapaperShareButton
-              url={'https://www.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               title={`Fidel`}
               description={`You have scored 80 in first level`}
             >
@@ -139,7 +139,7 @@ const ProfilePage = () => {
           </div>
           <div className=" cursor-pointer">
             <TwitterShareButton
-              url={'https://www.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               title={`Fidel`}
               via={`You have scored 80 in first level`}
             >
@@ -148,7 +148,7 @@ const ProfilePage = () => {
           </div>
           <div className=" mb-4 cursor-pointer">
             <FacebookShareButton
-              url={'https://www/.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               quote={`You have scored 80 in first level`}
             >
               <RiFacebookFill />

@@ -101,7 +101,7 @@ function SelectLevel() {
         <div className="hidden md:flex mr-0 items-end w-12 self-stretch flex-col justify-between">
           <div className=" cursor-pointer">
             <TwitterShareButton
-              url={'https://www.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               title={`Fidel`}
               via={`click the link to play fidel`}
             >
@@ -110,7 +110,7 @@ function SelectLevel() {
           </div>
           <div className="cursor-pointer">
             <FacebookShareButton
-              url={'https://www/.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               quote={`click the link to play fidel`}
             >
               <RiFacebookFill size={20} />
@@ -118,7 +118,7 @@ function SelectLevel() {
           </div>
           <div className=" cursor-pointer">
             <InstapaperShareButton
-              url={'https://www.fidel.com'}
+              url={'https://fidel-ablaze.vercel.app/'}
               title={`Fidel`}
               description={`click the link to play fidel`}
             >

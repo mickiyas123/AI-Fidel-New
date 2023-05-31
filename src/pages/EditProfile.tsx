@@ -71,7 +71,7 @@ const EditProfile = () => {
             <div className="flex md:ml-0 ml-8 flex-col gap-12">
               <div className=" cursor-pointer">
                 <InstapaperShareButton
-                  url={'https://www.fidel.com'}
+                  url={'https://fidel-ablaze.vercel.app/'}
                   title={`Fidel`}
                   description={`click the link to play fidel`}
                 >
@@ -80,7 +80,7 @@ const EditProfile = () => {
               </div>
               <div className=" cursor-pointer">
                 <TwitterShareButton
-                  url={'https://www.fidel.com'}
+                  url={'https://fidel-ablaze.vercel.app/'}
                   title={`Fidel`}
                   via={`click the link to play fidel`}
                 >
@@ -89,7 +89,7 @@ const EditProfile = () => {
               </div>
               <div className=" mb-4 cursor-pointer">
                 <FacebookShareButton
-                  url={'https://www/.fidel.com'}
+                  url={'https://fidel-ablaze.vercel.app/'}
                   quote={`click the link to play fidel`}
                 >
                   <RiFacebookFill />
