@@ -24,7 +24,7 @@ const PageNotFound = () => {
 
       {/* Mobile Part */}
       <div className="custom-glass mx-8 h-[50%] flex flex-col gap-8 md:w-1/2 z-10 mt-[30vh] justify-center items-center">
-        <p className='-mt-12 text-center w-11/12 text-sm md:text-xl'>Could not find page for <span className='inline-block p-1 bg-gray-300 animate-pulse text-black roundedxl'>{location.pathname}</span> path.</p>
+        <p className='-mt-12 text-center w-11/12 text-sm md:text-xl'>Could not find page for <span className='inline-block p-1 bg-gray-300 animate-pulse text-black rounded-xl'>{location.pathname}</span> path.</p>
         <p className='font-semibold mx-8 text-center text-white opacity-75'> Click anywhere to go to the previous page.</p>
       </div>  
 
