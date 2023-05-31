@@ -33,6 +33,7 @@ import { loadingAtom } from './store/store';
 import loadingGif from '@assets/images/loading.gif';
 import HandContextProvider from './context/HandContext';
 import UsePC from './pages/UsePC';
+import PageNotFound from './pages/PageNotFound';
 import {  isSafari, isMobile } from "react-device-detect";
 
 function App() {
@@ -81,7 +82,8 @@ function App() {
                   <Route path="result" element={<Result />} />
                   <Route path="change-language" element={<ChangeLanguage />} />
                 </Route>
-                <Route path="*" element={<p>path not found</p>} />
+                {/* <Route path="*" element={<p>path not found</p>} /> */}
+                <Route path="*" element={<PageNotFound />} />
               </Route>
             </Routes>
           </BrowserRouter>

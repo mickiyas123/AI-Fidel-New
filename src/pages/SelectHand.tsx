@@ -60,13 +60,13 @@ function SelectHand() {
         </div> */}
 
       <div className="custom-glass hidden md:flex w-[80%] pr-5 justify-between py-[5vh] md:mt-[5vh] csl:mt-0 pt-10 ">
-        <div className=""></div>
+        {/* <div className=""></div> */}
         <div className="w-10"></div>
         <div className="flex gap-5 flex-col items-center h-[50vh]">
           <h1 className="pan font-semibold csl:text-4xl text-4xl text-center [word-spacing:5px] w-3/4 text-white">
             {t('aylrh')}
           </h1>
-          <img className="object-contain w-5/12 " src={handshake} />
+          <img className="object-contain w-5/12 h-[60%] " src={handshake} />
           <div className="w-2/3 grow flex flex-col justify-center items-center font-light gap-3 text-sm text-white text-center leading-loose">
             <p>
               {' '}
