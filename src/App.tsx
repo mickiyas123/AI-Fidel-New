@@ -42,7 +42,7 @@ function App() {
 
   const isMobile = /Android|iPhone/i.test(navigator.userAgent);
   if (isMobile) return <UsePC message="mobile devices" />;
-  if (isSafari) return <UsePC message="opera browsers" />
+  if (isSafari) return <UsePC message="safari browsers" />
 
   if (loading)
     return (
