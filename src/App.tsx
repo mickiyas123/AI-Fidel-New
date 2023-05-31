@@ -39,7 +39,7 @@ function App() {
   const [loading] = useAtom(loadingAtom);
 
   if (isMobile) return <UsePC message="mobile devices" />;
-  if (isSafari) return <UsePC message="safari browsers" />
+  if (isSafari) return <UsePC message="safari browsers" />;
 
   if (loading)
     return (
@@ -61,7 +61,7 @@ function App() {
                 <Route path="select-profile" element={<SelectProfile />} />
                 {/* <Route path="login" element={<Login />} />  */}
                 <Route path="select-game" element={<SelectGame />} />
-                {/* <Route path="use-pc" element={<UsePC message="mobile devices" />} /> */}
+                {/* <Route path="use-pc" element={<UsePC message="safari browser" />} /> */}
                 <Route path="coming-soon" element={<ComingSoon />} />
                 <Route path="complete" element={<Complete />} />
                 <Route path="final-score-board" element={<FinalScoreBoard />} />
