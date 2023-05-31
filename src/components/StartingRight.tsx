@@ -17,8 +17,9 @@ function StartingRight({ header1, header2, btns, firstPage }) {
   const [loading, setLoading] = useAtom(loadingAtom);
   const [errorCount, setErrorCount] = useState(0);
   const navigate = useNavigate();
-  const { search } = useLocation();
+  const { search, pathname } = useLocation();
   const { t } = useTranslation();
+  const language = localStorage.getItem("language")
   function clearStorage() {
     localStorage.removeItem('level');
     localStorage.removeItem(`levelOneScore_${localStorage.getItem('displayName')}`);
@@ -79,7 +80,7 @@ function StartingRight({ header1, header2, btns, firstPage }) {
         <div className="hidden md:block">
           <Logo />
         </div>
-        <div className="mt-12 md:mt-4">
+        <div className={`mt-12 md:mt-4 flex ${language === 'am' && /login/i.test(pathname) &&/learn/i.test(search) ? "flex-col-reverse" : "flex-col"}`}>
           <h1 className="text-white text-2xl cxs:text-3xl md:text-4xl font-bold text-center">
             {header1}
           </h1>

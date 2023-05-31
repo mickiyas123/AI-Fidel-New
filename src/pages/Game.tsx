@@ -151,7 +151,7 @@ function Game() {
     // console.log(results.image)
     canvasCtx?.save();
     if (canvasCtx) {
-      canvasCtx.globalAlpha = 0.9; // Adjust the alpha value (0.5) as desired
+      canvasCtx.globalAlpha = 0.8; // Adjust the alpha value (0.5) as desired
       canvasCtx.clearRect(0, 0, canvasElement.current.width, canvasElement.current.height);
       canvasCtx.globalCompositeOperation = 'source-over';
       canvasCtx.drawImage(
@@ -371,7 +371,7 @@ function Game() {
           handDirection={handDirection}
         />
         <div
-          className={`flex ig:bg-red-500 h-[45%] md:h-[250px] cml:h-[100%] w-[240px] cxs:w-[300px] md:min-w-[240px] cml:min-w-[280px] md:w-[45%] items-center rounded-3xl justify-center overflow-hidden md:rounded-lg   ${
+          className={`flex ig:bg-red-500 h-[45%] md:h-[250px] cml:h-[100%] cml:max-h-[370px] border-2 border-primary w-[240px] cxs:w-[300px] md:min-w-[240px] cml:min-w-[280px] md:w-[45%] items-center rounded-3xl justify-center overflow-hidden md:rounded-lg   ${
             handDirection == 'left' ? 'order-1' : ''
           }`}
         >
