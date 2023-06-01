@@ -4,6 +4,7 @@ import { RiFacebookFill } from 'react-icons/ri';
 import { SiTwitter } from 'react-icons/si';
 import EthiopiaIcon from '@assets/icons/ethiopia-icon.png';
 import UKIcon from '@assets/icons/uk-icon.png';
+import ArabicIcon from '@assets/icons/arabic-icon.png';
 import { useTranslation } from 'react-i18next';
 import { useAtom } from 'jotai';
 import { langAtom } from '../store/store';
@@ -17,14 +18,21 @@ export const ChangeLanguage = () => {
   const [lang, setLang] = useAtom(langAtom);
   const [amharic, setAmharic] = useState(false);
   const [english, setEnglish] = useState(true);
+  const [arabic, setArabic] = useState(false);
   const user = useContext(AuthContext);
   useEffect(() => {
     if (localStorage.getItem('language') == 'am') {
       setAmharic(true);
       setEnglish(false);
-    } else {
+      setArabic(false)
+    } else if (localStorage.getItem('language') == 'ar') {
       setAmharic(false);
+      setEnglish(false);
+      setArabic(true)
+    } else {
+      setAmharic(true);
       setEnglish(true);
+      setArabic(false)
     }
   }, []);
   const changeLangtoAmh = () => {
@@ -33,6 +41,7 @@ export const ChangeLanguage = () => {
     localStorage.setItem('language', 'am');
     setAmharic(true);
     setEnglish(false);
+    setArabic(false)
     return;
   };
   const changeLangtoEng = () => {
@@ -40,9 +49,19 @@ export const ChangeLanguage = () => {
     setLang('en');
     setEnglish(true);
     setAmharic(false);
+    setArabic(false)
     localStorage.setItem('language', 'en');
     return;
   };
+  const changeLangtoAr = () => {
+    i18n.changeLanguage('ar');
+    setLang('ar');
+    localStorage.setItem('language', 'ar');
+    setEnglish(false);
+    setAmharic(false);
+    setArabic(true);
+    return
+  }
   return (
     <div className="m-8 md:m-0">
       <div className="profile-glass flex items-center justify-center md:justify-between space px-8 pt-6 rounded-md  mb-8">
@@ -93,6 +112,16 @@ export const ChangeLanguage = () => {
               {english ? <TiTick className="text-[#008867] mt-1" /> : null}
               <img src={UKIcon} className="w-5 ml-2" />
               <h1 className="text-[#FFF] ml-6">English</h1>
+            </div>
+          </div>
+          <div
+            className=" bg-[#2E2E2E] rounded-md flex py-2 px-5 justify-center cursor-pointer"
+            onClick={changeLangtoAr}
+          >
+            <div className="flex ml-2">
+              {arabic ? <TiTick className="text-[#008867] mt-1" /> : null}
+              <img src={ArabicIcon} className="w-5 ml-2" />
+              <h1 className="text-[#FFF] ml-6">Arabic</h1>
             </div>
           </div>
         </div>

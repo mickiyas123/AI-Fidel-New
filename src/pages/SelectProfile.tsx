@@ -50,6 +50,7 @@ function SelectProfile() {
   const [lang, setLang] = useAtom(langAtom);
   const [amharic, setAmharic] = useState(false);
   const [english, setEnglish] = useState(true);
+  const [arabic, setArabic] = useState(false);
   useEffect(() => {
     // localStorage.removeItem("level")
     
@@ -89,6 +90,15 @@ function SelectProfile() {
     localStorage.setItem('language', 'en');
     return;
   };
+  const changeLangtoAr = () => {
+    i18n.changeLanguage('ar');
+    setLang('ar');
+    localStorage.setItem('language', 'ar');
+    setEnglish(false);
+    setAmharic(false);
+    setArabic(true);
+    return
+  }
   return (
     <div className="overflow-auto transition-all flex md:flex-row flex-col change-bg h-screen">
       <div className=" overflow-auto flex flex-col items-end justify-around md:justify-center  flex-[1.5] md:flex-[1] md:px-20 px-4 ml-0 md:ml-4">
@@ -225,7 +235,7 @@ function SelectProfile() {
                   key={i}
                   to={(mode === 'game' && langCode == 'ar') ? '/coming-soon' : `/select-hand${search.length ? search + '&' : '?'}lang=${langCode}`}
                   className="flex capitalize items-center py-1 h-[5vh] md:py-2 md:h-12 px-[5px] bg-[#2E2E2E] hover:bg-[#3f3f3f] rounded-md justify-between"
-                onClick={langCode == 'en' || langCode == 'ar' ? changeLangtoEng : changeLangtoAmh }>
+                onClick={langCode == 'en' ? changeLangtoEng : langCode == 'ar' ? changeLangtoAr  : changeLangtoAmh }>
                   <img src={icon} className="w-1/12 rounded-sm" />
                   <p>{text}</p>
                   <div></div>
