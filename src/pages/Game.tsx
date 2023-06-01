@@ -375,7 +375,7 @@ function Game() {
           handDirection={handDirection}
         />
         <div
-          className={`flex ig:bg-red-500 h-[45%] md:h-[250px] cml:h-[100%] cml:max-h-[370px] border-2 border-primary w-[240px] cxs:w-[300px] md:min-w-[240px] cml:min-w-[280px] md:w-[45%] items-center rounded-3xl justify-center overflow-hidden md:rounded-lg   ${
+          className={`flex ig:bg-red-500 h-[45%] md:h-[250px] cml:h-[100%] cml:max-h-[550px] border-2 border-primary w-[240px] cxs:w-[300px] md:min-w-[240px] cml:min-w-[280px] md:w-[45%] items-center rounded-3xl justify-center overflow-hidden md:rounded-lg   ${
             handDirection == 'left' ? 'order-1' : ''
           }`}
         >
