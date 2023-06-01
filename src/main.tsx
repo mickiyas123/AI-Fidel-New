@@ -6,6 +6,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import am from './translation/am.json';
 import en from './translation/en.json';
+import ar from './translation/ar.json'
 import swDev from './swDev';
 import { Provider } from 'jotai';
 
@@ -24,6 +25,9 @@ function Root() {
         am: {
           translation: am,
         },
+        ar: {
+          translation: ar,
+        }
       },
       lng: defaultLanguage, // if you're using a language detector, do not define the lng option
       fallbackLng: 'en',
