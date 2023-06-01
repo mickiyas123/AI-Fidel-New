@@ -31,7 +31,7 @@ export const ChangeLanguage = () => {
       setArabic(true)
     } else {
       setAmharic(true);
-      setEnglish(true);
+      setEnglish(false);
       setArabic(false)
     }
   }, []);
