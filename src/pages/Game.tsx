@@ -102,6 +102,7 @@ function Game() {
   const [currentWordLength, setCurrentWordLength] = useState(1);
   const [selectedWord, setSelectWord] = useState<string>();
   const [selectedLetter, setSelectedLetter] = useState<string>();
+  const [scored, setScored] = useState<number>(0);
 
   /**
    * @description TO to show modal after each word completion
@@ -120,8 +121,10 @@ function Game() {
     //level compelted go to level completed page
 
     if (wordIndex == singleLevelWord.length - 1) {
-      navigate(`/level-completed${search}&points=${score}`);
-      score = 0;
+      navigate(`/level-completed${search}&points=${scored}`);
+      // navigate(`/level-completed${search}&points=${score}`);
+      // score = 0;
+      setScored(0);
       // if (userAgent.includes('Chrome') || userAgent.includes('Brave'))  reloadMediaPipeFiles();
     }
     setTimeout(() => {
@@ -205,7 +208,8 @@ function Game() {
 
             if (response.countCorrectFingers == 5) {
               //stop detecting hand this value change after a delay
-              score++;
+              // score++;
+              setScored(prev => prev + 1)
               skipPrediction = true;
               //this time out to delay change of current letter after detecting the hand
               setTimeout(() => {
@@ -362,7 +366,7 @@ function Game() {
           />
         ) : null}
         <GameLeftSide
-          score={score}
+          score={scored}
           isGameStarted={isGameStarted}
           lang={lang}
           isMediaPipeModelLoading={isMediaPipeModelLoading}
