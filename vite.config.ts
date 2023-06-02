@@ -15,7 +15,27 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
     },
   },
-  plugins: [react(), VitePWA()],
+  plugins: [
+    react(),
+    VitePWA({
+      workbox: {
+        globPatterns: ['**/*'],
+      },
+      // add this to cache all the
+      // static assets in the public folder
+      includeAssets: ['**/*'],
+      manifest: {
+        icons: [
+          {
+            src: '/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
+    }),
+  ],
   build: {
     sourcemap: true,
   },
