@@ -7,7 +7,6 @@ import { initReactI18next } from 'react-i18next';
 import am from './translation/am.json';
 import en from './translation/en.json';
 import ar from './translation/ar.json'
-import swDev from './swDev';
 import { Provider } from 'jotai';
 
 function Root() {
@@ -45,4 +44,3 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </Provider>
   </React.StrictMode>
 );
-// swDev();
